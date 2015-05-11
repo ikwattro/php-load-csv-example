@@ -1,0 +1,12 @@
+{
+    "name": "cw/csv",
+    "require": {
+        "neoxygen/neoclient": "~2.1"
+    },
+    "authors": [
+        {
+            "name": "Christophe Willemsen",
+            "email": "willemsen.christophe@gmail.com"
+        }
+    ]
+}

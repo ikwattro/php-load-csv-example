@@ -1,0 +1,12 @@
+Object,Orbit,Alt,Program,Manned,Launched,Status
+"Sputnik 1","Elliptical","LEO","Soviet","N","04 Oct 1957",0
+"Mir","Circular","LEO","Soviet","Y","19 Feb 1986",0
+"ISS","Circular","LEO","International","Y","20 Nov 1998",1
+"SkyLab","Circular","LEO","NASA","Y","14 May 1973",0
+"Telstar 1","Elliptical","MEO","International","N","10 Jul 1962",0
+"GPS USA-66","Circular","MEO","International","N","26 Nov 1990",1
+"Vela 1A","Circular","HEO","NASA","N","17 Oct 1963",0
+"Landsat 8","Circular","LEO", "NASA","N","11 Feb 2013",1
+"Hubble","Circular","LEO", "International","N","08 Feb 1990",1
+"Herschel","Lissajous","L2", "ESA","N","14 May 2009",0
+"Planck","Lissajous","L2","ESA","N","14 May 2009",1
