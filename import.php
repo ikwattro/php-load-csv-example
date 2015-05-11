@@ -5,7 +5,7 @@ include_once(__DIR__.'/vendor/autoload.php');
 use Neoxygen\NeoClient\ClientBuilder;
 
 $neoClient = ClientBuilder::create()
-    ->addConnection('default', 'http', 'localhost', 7474, true, 'neo4j', 'error')
+    ->addConnection('default', 'http', 'localhost', 7474, true, 'neo4j', 'password')
     ->setAutoFormatResponse(true)
     ->build();
 $commitSize = 1000;
@@ -21,7 +21,8 @@ foreach ($csvLines as $i => $line) {
         $query = 'CREATE (a:' . $label . ') SET a.name = {sat_name}';
         $params = ['sat_name' => trim($line[0])];
         $transaction->pushQuery($query, $params);
-        if ($linesToCommit >= $commitSize) { // If
+        if ($linesToCommit >= $commitSize) { // If there is 1000 or more lines to commit
+            // we commit the transaction and recreate a new prepared tx
             $transaction->commit();
             $linesToCommit = 0;
             $transaction = $neoClient->prepareTransaction();
@@ -29,4 +30,4 @@ foreach ($csvLines as $i => $line) {
         $linesToCommit++;
     }
 }
-$transaction->commit();
+$transaction->commit(); // commit the remaining lines
